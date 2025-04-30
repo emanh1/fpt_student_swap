@@ -1,10 +1,9 @@
 import axios from "axios";
-import dotenv from "dotenv";
 
-dotenv.config();
- 
+const baseURL = import.meta.env.VITE_BACKEND_URL + "/api";
+
 const http = axios.create({
-    baseURL: process.env.BACKEND_URL + "/api",
+    baseURL: baseURL, 
     headers: {
         "Content-Type": "application/json",
     },

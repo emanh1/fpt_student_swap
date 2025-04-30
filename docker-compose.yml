@@ -16,7 +16,10 @@ services:
       - db
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        - VITE_BACKEND_URL=${VITE_BACKEND_URL}
     restart: always
     ports:
       - "${FRONTEND_PORT}:${FRONTEND_PORT}"
