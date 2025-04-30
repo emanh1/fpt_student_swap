@@ -6,7 +6,7 @@
       "Host": "db",
       "Port": 5432,
       "MaintenanceDB": "postgres",
-      "Username": "postgres",
+      "Username": "fpt_class_swap",
       "SSLMode": "prefer"
     }
   }
