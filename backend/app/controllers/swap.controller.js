@@ -4,7 +4,7 @@ const Op = db.Sequelize.Op;
 const Swap = db.swap;
 
 export const create = (req, res) => {
-	if (!req.body.subjectCode || !req.body.fromRollNumber || !req.body.fromClass || !req.body.currentSlot || !req.body.toRollNumber || !req.body.toClass || !req.body.desiredSlot) {
+	if (!req.body.subjectCode || !req.body.fromRollNumber || !req.body.fromClass || !req.body.currentSlot || !req.body.desiredSlot) {
 			res.status(400).send({
 					message: "Content can not be empty",
 			});
