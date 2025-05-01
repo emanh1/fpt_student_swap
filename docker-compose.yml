@@ -3,10 +3,11 @@ services:
     build: ./backend
     restart: always
     ports:
-      - "${BACKEND_PORT}:${BACKEND_PORT}"
+      - "${VITE_BACKEND_PORT}:${VITE_BACKEND_PORT}"
     environment:
-      - BACKEND_PORT=${BACKEND_PORT}
-      - CORS_ORIGIN=${CORS_ORIGIN}
+      - VITE_BACKEND_PORT=${VITE_BACKEND_PORT}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - FRONTEND_PORT=${FRONTEND_PORT}
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
       - DB_USER=${DB_USER}
@@ -20,6 +21,7 @@ services:
       context: ./frontend
       args:
         - VITE_BACKEND_URL=${VITE_BACKEND_URL}
+        - VITE_BACKEND_PORT=${VITE_BACKEND_PORT}
     restart: always
     ports:
       - "${FRONTEND_PORT}:${FRONTEND_PORT}"

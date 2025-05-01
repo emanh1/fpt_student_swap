@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: process.env.CORS_ORIGIN,
+    origin: process.env.VITE_BACKEND_URL + ":" + process.env.VITE_BACKEND_PORT,
     credentials: true
 };
 
@@ -44,7 +44,7 @@ db.sequelize.sync().then(() => {
     console.error("Failed to sync database:", err);
 });
 
-const PORT = process.env.BACKEND_PORT;
+const PORT = process.env.VITE_BACKEND_PORT;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
