@@ -10,10 +10,10 @@ export default (app) => {
 
   router.get('/google/callback',
     passport.authenticate('google', {
-      failureRedirect: `${process.env.FRONTEND_URL}/login`
+      failureRedirect: `${process.env.FRONTEND_URL}:${process.env.FRONTEND_PORT}`
     }),
     (req, res) => {
-      res.redirect(`${process.env.FRONTEND_URL}/dashboard`);
+      res.redirect(`${process.env.FRONTEND_URL}:${process.env.FRONTEND_PORT}`);
     }
   );
 
@@ -26,8 +26,10 @@ export default (app) => {
   });
 
   router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect(process.env.FRONTEND_URL);
+    req.logout(function (err) {
+      if (err) { return next(err); }
+      res.redirect(`${process.env.FRONTEND_URL}:${process.env.FRONTEND_PORT}`);
+    });
   });
 
   app.use('/auth', router);
