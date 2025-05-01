@@ -152,7 +152,6 @@ function SwapRequestList() {
                     </div>
                 ) : (
                     <div>
-                        <p>Please click on a swap request...</p>
                     </div>
                 )}
             </div>
