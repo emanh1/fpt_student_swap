@@ -11,7 +11,7 @@ function App() {
                 <nav className="bg-gray-800 p-4 shadow-lg border-b border-gray-700">
                     <div className="flex space-x-4">
                         <Link 
-                            to="/swap-requests" 
+                            to="/" 
                             className="hover:text-blue-400 font-bold transition-colors duration-200"
                         >
                             Swap Requests
