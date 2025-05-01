@@ -48,12 +48,24 @@ function AddSwapRequest() {
                     <h4 className="font-bold text-green-600 mb-4">
                         Swap request submitted successfully!
                     </h4>
+                    <div className="flex gap-2 justify-center">
+                    <button
+                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200"
+                        onClick={() => {
+                            window.location.href = "/";
+                        }
+                        }
+                    >
+                        Home
+                    </button>
+
                     <button
                         className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition duration-200"
                         onClick={newSwapRequest}
                     >
                         Add Another Request
                     </button>
+                    </div>
                 </div>
             ) : (
                 <div>
