@@ -11,7 +11,7 @@ function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_URL}/auth/user`, { 
+        axios.get(`${import.meta.env.VITE_BACKEND_URL}:${import.meta.env.VITE_BACKEND_PORT}/auth/user`, { 
             withCredentials: true 
         })
             .then(response => {
@@ -53,7 +53,7 @@ function App() {
                         </div>
                         <div className="flex items-center gap-4">
                             <a 
-                                href={`${import.meta.env.VITE_BACKEND_URL}/auth/logout`}
+                                href={`${import.meta.env.VITE_BACKEND_URL}:${import.meta.env.VITE_BACKEND_PORT}/auth/logout`}
                                 className="hover:text-blue-400"
                             >
                                 Logout
