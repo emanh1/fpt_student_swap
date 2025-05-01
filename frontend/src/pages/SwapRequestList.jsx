@@ -117,7 +117,7 @@ function SwapRequestList() {
                             {currentSwap.subjectCode}
                         </div>
                         <div className="mb-2">
-                            <strong>Student: </strong>
+                            <strong>Student Roll Number: </strong>
                             {currentSwap.fromRollNumber}
                         </div>
                         <div className="mb-2">
