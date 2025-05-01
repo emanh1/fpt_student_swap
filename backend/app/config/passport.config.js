@@ -24,7 +24,7 @@ export default function configurePassport() {
   passport.use(new GoogleStrategy({
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.VITE_BACKEND_URL + ":" + process.env.VITE_BACKEND_PORT + '/api/auth/google/callback',
+      callbackURL: process.env.VITE_BACKEND_URL + ":" + process.env.VITE_BACKEND_PORT + '/auth/google/callback',
       scope: ['profile', 'email']
     },
     async (accessToken, refreshToken, profile, done) => {
