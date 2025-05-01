@@ -42,7 +42,7 @@ function AddSwapRequest() {
     };
 
     return (
-        <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+        <div className="max-w-md mx-auto p-6 bg-gray-800 rounded-lg shadow-md">
             {submitted ? (
                 <div className="text-center">
                     <h4 className="font-bold text-green-600 mb-4">

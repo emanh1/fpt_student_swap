@@ -6,14 +6,20 @@ import SwapRequest from "./pages/SwapRequest";
 function App() {
     return (
         <BrowserRouter>
-            <div>
+            <div className="min-h-screen bg-gray-900 text-gray-100">
                 {/* NAVBAR */}
-                <nav className="bg-blue-600 p-4 text-white">
+                <nav className="bg-gray-800 p-4 shadow-lg border-b border-gray-700">
                     <div className="flex space-x-4">
-                        <Link to="/swap-requests" className="hover:text-gray-300 font-bold">
+                        <Link 
+                            to="/swap-requests" 
+                            className="hover:text-blue-400 font-bold transition-colors duration-200"
+                        >
                             Swap Requests
                         </Link>
-                        <Link to="/add" className="hover:text-gray-300">
+                        <Link 
+                            to="/add" 
+                            className="hover:text-blue-400 transition-colors duration-200"
+                        >
                             Add Request
                         </Link>
                     </div>

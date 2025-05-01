@@ -89,7 +89,7 @@ function SwapRequestList() {
                             <li
                                 className={
                                     "px-4 py-2 cursor-pointer " +
-                                    (index === currentIndex ? "bg-blue-100" : "")
+                                    (index === currentIndex ? "bg-gray-500" : "")
                                 }
                                 onClick={() => setActiveSwap(swap, index)}
                                 key={index}
@@ -110,7 +110,7 @@ function SwapRequestList() {
             {/* RIGHT COLUMN: DETAILS */}
             <div className="flex-1">
                 {currentSwap ? (
-                    <div className="p-4 bg-white rounded shadow">
+                    <div className="p-4 bg-gray-800 rounded shadow">
                         <h4 className="font-bold text-xl mb-2">Swap Request Details</h4>
                         <div className="mb-2">
                             <strong>Subject Code: </strong>

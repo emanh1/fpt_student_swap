@@ -80,7 +80,7 @@ function SwapRequest() {
     return (
         <div>
             {currentSwap ? (
-                <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+                <div className="max-w-md mx-auto p-6 bg-gray-800 rounded-lg shadow-md">
                     <h4 className="font-bold text-2xl mb-4">Edit Swap Request</h4>
                     
                     <div className="space-y-4">
@@ -146,7 +146,7 @@ function SwapRequest() {
                                     className={`px-3 py-1 rounded ${
                                         currentSwap.status === "Pending"
                                             ? "bg-yellow-500 text-white"
-                                            : "bg-gray-200"
+                                            : "bg-black-300 border"
                                     }`}
                                     onClick={() => updateStatus("Pending")}
                                 >
@@ -156,7 +156,7 @@ function SwapRequest() {
                                     className={`px-3 py-1 rounded ${
                                         currentSwap.status === "Matched"
                                             ? "bg-green-500 text-white"
-                                            : "bg-gray-200"
+                                            : "bg-black-300 border"
                                     }`}
                                     onClick={() => updateStatus("Matched")}
                                 >
@@ -166,7 +166,7 @@ function SwapRequest() {
                                     className={`px-3 py-1 rounded ${
                                         currentSwap.status === "Cancelled"
                                             ? "bg-red-500 text-white"
-                                            : "bg-gray-200"
+                                            : "bg-black-300 border"
                                     }`}
                                     onClick={() => updateStatus("Cancelled")}
                                 >
