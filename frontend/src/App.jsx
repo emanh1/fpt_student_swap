@@ -5,7 +5,7 @@ import AddSwapRequest from "./pages/AddSwapRequest";
 import SwapRequest from "./pages/SwapRequest";
 import Login from "./pages/Login";
 import axios from "axios";
-import { AuthContext } from "./context/AuthContext";
+import { AuthContext } from "./contexts/AuthContext";
 import { useContext } from "react";
 
 function App() {
