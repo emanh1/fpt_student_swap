@@ -1,20 +1,21 @@
 import * as swaps from "../controllers/swap.controller.js";
+import { requireAuth, validateSwapRequest } from "../middleware/auth.middleware.js";
 import express from "express";
 
 export default (app) => {
   const router = express.Router();
 
-  router.post("/", swaps.create);
+  router.post("/", requireAuth, validateSwapRequest, swaps.create);
 
-  router.get("/", swaps.findAll);
+  router.get("/", requireAuth, swaps.findAll);
 
-  router.get("/:id", swaps.findOne);
+  router.get("/:id", requireAuth, swaps.findOne);
 
-  router.put("/:id", swaps.update);
+  router.put("/:id", requireAuth, validateSwapRequest, swaps.update);
 
-  router.delete("/:id", swaps.deleteSwap);
+  router.delete("/:id", requireAuth, swaps.deleteSwap);
 
-  router.delete("/", swaps.deleteAll);
+  router.delete("/", requireAuth, swaps.deleteAll);
 
   app.use("/api/swap-requests", router); 
 };
