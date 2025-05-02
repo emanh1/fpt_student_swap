@@ -5,23 +5,12 @@ import AddSwapRequest from "./pages/AddSwapRequest";
 import SwapRequest from "./pages/SwapRequest";
 import Login from "./pages/Login";
 import axios from "axios";
+import { AuthContext } from "./context/AuthContext";
+import { useContext } from "react";
 
 function App() {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BACKEND_URL}:${import.meta.env.VITE_BACKEND_PORT}/auth/user`, { 
-            withCredentials: true 
-        })
-            .then(response => {
-                setUser(response.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
-    }, []);
+    const { user, loading } = useContext(AuthContext);
 
     if (loading) {
         return <div>Loading...</div>;
