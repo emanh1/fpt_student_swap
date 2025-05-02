@@ -19,7 +19,6 @@ export function AuthProvider({ children }) {
             );
             setUser(response.data);
         } catch (error) {
-            console.error('Auth check failed:', error);
         } finally {
             setLoading(false);
         }
