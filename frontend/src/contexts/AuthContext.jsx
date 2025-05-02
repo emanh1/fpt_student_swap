@@ -8,7 +8,14 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        checkAuth();
+        const cachedUser = localStorage.getItem('user');
+        if (cachedUser) {
+            setUser(JSON.parse(cachedUser));
+            setLoading(false);
+        } else {
+            checkAuth();
+        }
+
     }, []);
 
     const checkAuth = async () => {
@@ -18,6 +25,7 @@ export function AuthProvider({ children }) {
                 { withCredentials: true }
             );
             setUser(response.data);
+            sessionStorage.setItem('user', JSON.stringify(response.data));
         } catch (error) {
         } finally {
             setLoading(false);
